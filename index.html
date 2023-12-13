@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuantumDot</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="QuantumDot">
+    <meta name="keywords" content="QuantumDot, IT, consultancy, AI, artificial intelligence, data science">
+    <meta name="author" content="QuantumDot">
+
+    <!-- Open Graph Tags for Facebook -->
+    <meta property="og:title" content="QuantumDot"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.quantumdot.nl/"/>
+    <meta property="og:image" content="http://www.quantumdot.nl/qd_og_image.jpg"/>
+    <meta property="og:description" content="QuantumDot"/>
+
+     <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QuantumDot">
+    <meta name="twitter:description" content="QuantumDot">
+    <meta name="twitter:image" content="http://www.quantumdot.nl/qd_tw_image.jpg">
+
+    <!-- Viewport for Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://www.quantumdot.nl/">
+
+
+    <!-- Include Font Awesome from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'Futura Medium Pt';
+            src: url('futura_medium_pt.ttf') format('truetype');
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .header {
+            font-size: 60px;
+            letter-spacing: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000000;
+            font-family: 'Futura Medium Pt', Arial, sans-serif;
+            margin-bottom: 50px;
+        }
+
+        .icon {
+            color: #1e1e1e;
+            margin: 10px;
+            font-size: 40px;
+            transition: transform 0.3s, color 0.3s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+            color: #000;
+        }
+
+        video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            min-width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+            font-family: 'Futura Medium Pt', Arial, sans-serif;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0px 2px 4px #000000; /* Optional: Adds a subtle shadow for depth */
+        }
+
+        /* Tooltip arrow */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<video autoplay loop muted="muted" playsinline>
+    <source src="bg.mp4" type="video/mp4">
+    <source src="bg.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+<div class="header">QUANTUM DOT</div>
+
+<!-- Use Font Awesome icons for contact info -->
+    <div class="contact-info">
+        <a href="https://instagram.com/quantumdot" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+        <!-- Tooltip container -->
+        <div class="tooltip">
+            <a href="#" class="icon" onclick="copyEmail()" onmouseout="resetTooltip()"><i class="fas fa-envelope"></i></a>
+            <span class="tooltiptext" id="emailTooltip">info@quantumdot.nl</span>
+        </div>
+    </div>
+
+    <script>
+        function copyEmail() {
+            // Copy the email address to the clipboard
+            navigator.clipboard.writeText('info@nebulanoir.io').then(function() {
+                // Change the tooltip text
+                var tooltip = document.getElementById('emailTooltip');
+                tooltip.innerHTML = 'Email copied! <i class="fas fa-check"></i>';
+            }, function(err) {
+                // If the copy fails, handle it here
+                tooltip.innerHTML = 'Failed to copy';
+            });
+        }
+
+        function resetTooltip() {
+            // Reset the tooltip text when mouse leaves the icon
+            var tooltip = document.getElementById('emailTooltip');
+            setTimeout(function() { tooltip.innerHTML = 'info@quantumdot.nl'; }, 300);
+        }
+    </script>
+
+</body>
+</html>
